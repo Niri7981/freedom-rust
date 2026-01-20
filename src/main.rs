@@ -1,17 +1,20 @@
-fn fib(n:u32)->u64{
-    let mut a = 0;
-    let mut b = 1;
-    for _ in 0..n{
-        let  next = a+b;
-        a = b;
-        b = next;
-    }
-    a
-}
-//斐波那契数列中的第n个数是后面这个循环得到的
-
 fn main(){
-    let n = 10;
-    let result  = fib(n);
-    println!("斐波那契数列的第{}个数的值是{}",n,result);
+    let s1 = String::from("Hello,RUST");
+    let s2 = s1;
+
+    let len = calculate_length(&s2);
+    println!("The length of {} is {}",s2,len);
+    println!("{}",s2);
+
+    let mut s3 = String::from("Digital");
+    change(&mut s3);
+    println!("I AM{}",s3);    
+}
+
+fn calculate_length(s:&String)->usize{
+    s.len()
+}
+
+fn change(some_string:&mut String){
+    some_string.push_str("Nomad");
 }
