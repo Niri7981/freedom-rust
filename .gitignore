@@ -1,1 +1,10 @@
-/target
+# 忽略 Rust 编译生成的产物
+target/
+**/target/
+
+# 忽略 VS Code 的本地设置
+.vscode/
+
+# 忽略操作系统生成的杂物
+.DS_Store
+Thumbs.db

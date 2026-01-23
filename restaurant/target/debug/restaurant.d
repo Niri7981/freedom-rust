@@ -1,1 +1,0 @@
-D:\RustProjects\freedom-rust\restaurant\target\debug\restaurant.exe: D:\RustProjects\freedom-rust\restaurant\src\front_of_house.rs D:\RustProjects\freedom-rust\restaurant\src\lib.rs D:\RustProjects\freedom-rust\restaurant\src\main.rs
