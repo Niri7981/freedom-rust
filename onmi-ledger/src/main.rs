@@ -79,3 +79,4 @@ fn main(){
     println!("我的总资产是{}dollars",my_ledger.total_value());
 
 }
+

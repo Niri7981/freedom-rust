@@ -2,20 +2,31 @@
 // derive(Debug) 为了方便你调试
 #[derive(Debug)]
 
-
-pub struct Node<T> {
-    pub value: T,
-    pub next: Option<Box<Node<T>>>, // 重点：用 Box 包裹，解决递归类型大小未知的问题
+pub struct Node<T>{
+    pub value:T,
+    pub next:Option<Box<Node<T>>>,
+}
+pub struct LinkedList<T>{
+    head:Option<Box<Node<T>>>,
 }
 
-impl<T> Node<T> {
-    pub fn new(value: T) -> Self {
-        Node {
-            value,
-            next: None,
-        }
+impl <T> LinkedList<T>{
+    
+   pub  fn new()->Self{
+        LinkedList{ head:None}
+    } 
+
+    pub fn push(&mut self,value:T){
+        let new_node = Box::new(Node{value,
+            next:self.head.take(),
+        });
+        self.head=Some(new_node); 
     }
 }
+
+
+
+
 
 fn main(){
     
