@@ -35,8 +35,6 @@ impl <T> MyStack <T> {
 }
 
 fn main(){
-
-
     }
 
 #[cfg(test)]
