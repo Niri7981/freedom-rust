@@ -1,0 +1,16 @@
+[package]
+name = "dsa_practice"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+<<<<<<< HEAD
+
+[workplace]
+members = [
+    "restaurant",
+    "chapter_08_collections",
+    "dsa_practice",
+]
+=======
+>>>>>>> 3443cf8 (chore: save local state before sync)
