@@ -35,3 +35,6 @@ fn main(){
     
     println!("Sorted array: {:?}", data);
 }
+
+//终于git完事了，他妈的
+// 🚀 Implemented QuickSort: O(n log n) speed with Rust safety!
