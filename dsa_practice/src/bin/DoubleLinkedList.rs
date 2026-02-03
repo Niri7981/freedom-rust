@@ -115,22 +115,57 @@ impl<T: Display> DoublyLinkedList<T>{
     }
 }
 
+pub struct Stack<T>{
+    list:DoublyLinkedList<T>,
+}
+
+impl<T:Display>Stack<T>{
+    pub fn new()->Self{
+        Stack{
+            list:DoublyLinkedList::new()
+        }
+    }
+    pub fn push(&mut self,item:T){
+        self.list.push_back(item);
+    }
+    pub fn pop(&mut self)->Option<T>{
+        self.list.pop_back()
+    }
+}
+
+
+
+pub struct Queue<T>{
+    list:DoublyLinkedList<T>,
+}
+
+impl<T: std::fmt::Display> Queue<T> {
+    pub fn new() -> Self {
+        Queue { list: DoublyLinkedList::new() }
+    }
+
+    pub fn enqueue(&mut self, item: T) {
+        self.list.push_back(item); // 进队
+    }
+
+    pub fn dequeue(&mut self) -> Option<T> {
+        self.list.pop_front()      // 出队 
+    }
+}
 
 
 
 fn main() {
-    // 🧪 测试 1: 存字符串 (String)
-    let mut str_list = DoublyLinkedList::new();
-    str_list.push_back("Hello"); // 自动推导 T = &str
-    str_list.push_back("World");
-    str_list.push_front("Rust");
-    println!("--- String List ---");
-    str_list.display(); // 应该打印: Rust -> Hello -> World -> None
+    let mut stack = Stack::new();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    println!("Stack pop: {:?}", stack.pop().unwrap()); // 应该是 3 (后进先出)
 
-    // 🧪 测试 2: 存整数 (i32)
-    let mut int_list = DoublyLinkedList::new();
-    int_list.push_back(100);
-    int_list.push_back(200);
-    println!("--- Int List ---");
-    int_list.display(); // 应该打印: 100 -> 200 -> None
+    // 测试队列
+    let mut queue = Queue::new();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    println!("Queue dequeue: {:?}", queue.dequeue().unwrap()); // 应该是 1 (先进先出)
 }
